@@ -1,0 +1,22 @@
+extends layout.pug
+
+block content
+  table.table.table-striped
+    thead
+    h2 Existing Users
+      th(scope='col') id
+      th(scope='col') First Name
+      th(scope='col') Last Name
+      th(scope='col') Email
+      th(scope='col') Age
+      th(scope='col') Favorite Beatle
+      th(scope='col') Likes Ice Cream
+    tbody
+      each user in users
+        td(scope='row')= user.id
+        td= user.firstName
+        td= user.lastName
+        td= user.email
+        td
+        td
+        td

@@ -1,0 +1,17 @@
+block content
+  form(action='/create' method='post')
+    .form-group
+      label(for='firstName') First Name
+      input(type='text' id='firstName' class='form-control' name='firstName' value=firstName)
+    .form-group
+      label(for='lastName') Last Name
+      input(type='text' id='lastName' class='form-control' name='lastName' value=lastName)
+    .form-group
+      label(for='email') Email
+      input(type='email' id='email' class='form-control' name='email' value=email)
+    .form-group
+      label(for='password') Password
+      input(type='password' id='password' class='form-control' name='password' value=password)
+    .form-group
+      label(for='confirmPassword') Confirm Password
+      input(type='password' id='confirmPassword' class='form-control' name='confirmPassword' value=confirmPassword)
