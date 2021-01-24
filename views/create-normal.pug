@@ -1,15 +1,26 @@
 extends layout
 
 block content
-  mixin form(_type, _id, _value, _label)
-    .form-group
-      label(for= _id)= _label
-      input(type= _type id= _id class='form-control' value= _value)
+  if errors
+    ul The following errors were found:
+      each error in errors
+        li= error
   form(action='/create' method='post')
-    +form('text', 'firstName', firstName, "First Name")
-    +form('text', 'lastName', lastName, "Last Name")
-    +form('email', 'email', email, "Email")
-    +form('password', 'password', password, "Password")
-    +form('password', 'confirmPassword', confirmPassword, "Confirm Password")
+    input(type='hidden' name='_csrf' value= csrfToken)
+    .form-group
+      label(for='firstName') First Name
+      input(type='text' id='firstName' class='form-control' name='firstName' value=firstName)
+    .form-group
+      label(for='lastName') Last Name
+      input(type='text' id='lastName' class='form-control' name='lastName' value=lastName)
+    .form-group
+      label(for='email') Email
+      input(type='email' id='email' class='form-control' name='email' value=email)
+    .form-group
+      label(for='password') Password
+      input(type='password' id='password' class='form-control' name='password' value=password)
+    .form-group
+      label(for='confirmedPassword') Confirm Password
+      input(type='password' id='confirmedPassword' class='form-control' name='confirmedPassword' value=confirmPassworded)
     div
-      button(type='submit' class='btn btn-primary') Create User
+      input(type='submit' value='Create User')
