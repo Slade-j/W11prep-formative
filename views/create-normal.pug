@@ -1,3 +1,5 @@
+extends layout
+
 block content
   form(action='/create' method='post')
     .form-group
@@ -15,3 +17,5 @@ block content
     .form-group
       label(for='confirmPassword') Confirm Password
       input(type='password' id='confirmPassword' class='form-control' name='confirmPassword' value=confirmPassword)
+    div
+      button(type='submit' class='btn btn-primary') Create User

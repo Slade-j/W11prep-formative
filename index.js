@@ -22,6 +22,10 @@ app.get("/", (req, res) => {
   res.render("index", { users });
 });
 
+app.get("/create", (req, res) => {
+  res.render("create-normal")
+})
+
 app.listen(port, () => console.log(`Example app listening on port ${port}!`));
 
 module.exports = app;
